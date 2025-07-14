@@ -1,0 +1,80 @@
+{% extends 'app/base.html' %}
+
+{% block hero %}
+    {% if category.name == 'Inspirational' %}
+        <div class="category-cover inspirational-cover">
+
+        </div>
+    {% elif category.name == 'Motivational' %}
+        <div class="category-cover motivational-cover">
+
+        </div>
+    {% elif category.name == 'Time Management' %}
+        <div class="category-cover time-management-cover">
+
+        </div>
+    {% elif category.name == 'Goal Setting' %}
+        <div class="category-cover goal-setting-cover">
+
+        </div>
+    {% elif category.name == 'Spiritual' %}
+        <div class="category-cover spiritual-cover">
+
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block main%}
+   <div class="container-grid">
+        <div class="left-sidebar">
+          
+            <ul class="authors">
+                <h3>Authors</h3>
+                <li><a href="{% url 'video_category_detail' category.slug %}">All Authors</a></li>
+                {% for author in authors %}
+                    <li>
+                        <a href="{% url 'video_category_detail' category.slug %}?author={{ author.id }}"
+                            {% if selected_author_id == author.id %}style="font-weight: bold;"{% endif %}>
+                            {{ author.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <section class="right-content">
+            <h1>{{category.name}} Videos</h1>
+            <div class="video-content">
+                {% for video in videos %}
+                    <iframe width="300" height="215" src="{{ video.get_youtube_embed_url }}" frameborder="0" allowfullscreen></iframe>
+                {% endfor %}
+            
+            </div>
+            
+            <div class="pagination">
+                {% if videos.has_previous %}
+                    <a href="?page=1{% if querystring %}&{{ querystring }}{% endif %}">« First</a>
+                    <a href="?page={{ videos.previous_page_number }}{% if querystring %}&{{ querystring }}{% endif %}">‹ Prev</a>
+                {% endif %}
+
+                {% for num in videos.paginator.page_range %}
+                    {% if num > videos.number|add:'-3' and num < videos.number|add:'3' %}
+                    {% if videos.number == num %}
+                        <span class="current">{{ num }}</span>
+                    {% else %}
+                        <a href="?page={{ num }}{% if querystring %}&{{ querystring }}{% endif %}">{{ num }}</a>
+                    {% endif %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if videos.has_next %}
+                    <a href="?page={{ videos.next_page_number }}{% if querystring %}&{{ querystring }}{% endif %}">Next ›</a>
+                    <a href="?page={{ videos.paginator.num_pages }}{% if querystring %}&{{ querystring }}{% endif %}">Last »</a>
+                {% endif %}
+            </div>
+
+        </section>
+      
+
+   </div>
+{% endblock %}

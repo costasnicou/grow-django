@@ -1,0 +1,109 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block hero %}
+    <div class="slider">
+        <div class="slides">
+            <div class="slide slide1 ">
+                <hgroup>
+                    <h1 class="heading">Discover personal development videos</h1>
+                    <h2 class="sub-heading">Change your life for the better!</h2>
+                </hgroup>
+            </div>
+
+            <div class="slide slide2" >
+                    <hgroup>
+                    <h1 class="heading">Lorem ipsum Dolor</h1>
+                    <h2 class="sub-heading">Lorem ipsum Dolor</h2>
+                </hgroup>
+                
+            </div>
+            <div class="slide slide3" >
+                    <hgroup>
+                    <h1 class="heading">Discover personal development videos</h1>
+                    <h2 class="sub-heading">Change your life for the better!</h2>
+                </hgroup>            
+            </div>
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+{% endblock %}
+
+
+
+{% block main %}
+    <section class="about-us">
+        <article>
+            <h3>About Us</h3>
+            <p>At SecretKnowHow, we believe that every person carries untapped potential waiting to be awakened. Our mission is to ignite that spark by sharing powerful videos, life-changing stories, and transformative wisdom from the world’s most inspiring personal development coaches. From humble beginnings to global impact, these stories prove that no obstacle is too big and no dream too distant. Whether you're seeking motivation, clarity, or the next step on your growth journey, this is your space to rise, reflect, and transform. Because your story isn’t over—it’s just getting started.</p>
+        </article>
+
+    </section>
+
+    <section class="success-stories">
+        <h3 class="success-stories-title">Inspirational Stories</h3>
+        <div class="success-stories-wraper">
+            {% for story in stories %}
+                <div class="success-story">
+                    <h4>{{story.coach_name}}</h4>
+                    <img src="{{ story.coach_img.url }}" alt="{{ story.name }}">
+                    <a href="{% url 'coach_story_detail' slug=story.slug %}" class="view-story">View Story</a>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <section class="featured-videos">
+        
+        <div class="featured-videos-wraper">
+            <h3 style="text-align: center;">Featured Videos</h3>
+            <div class="videos">
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/HUHMZf3qwsQ?si=4TkWZPszLdaKt3fm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/93RI4l-O0BY?si=cwG5zuZljmDurCcd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/D53m7CJ7wYI?si=RALbXF0720IbqLUP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/h1rA2jMS-6I?si=UBFGS9En0A-vfvzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="books-section">
+        <div class="books-wraper">
+            <h3>Life Changing Books</h3>
+            <div class="books">
+                <div class="book">
+                    <img src="{% static 'imgs/books/awaken-the-giant-within.jpg' %}" alt="">
+                    <h4 class="book-title">Anthony Robbins- Awaken the Giant Within</h4>
+                    <a href="" class="buy-book">Buy Book</a>
+                </div>
+
+                <div class="book">
+                    <img src="{% static 'imgs/books/first-steps-to-wealth.jpg' %}" alt="">
+                    <h4 class="book-title">Dani Johnson - First Steps to Wealth</h4>
+                    <a href="" class="buy-book">Buy Book</a>
+                </div>
+
+                <div class="book">
+                    <img src="{% static 'imgs/books/life-with-no-limits.jpg' %}" alt="">
+                   
+                    <h4 class="book-title">Nick Vujicic - Life Without Limits</h4>
+                    <a href="" class="buy-book">Buy Book</a>
+                </div>
+
+                <div class="book">
+                    <img src="{% static 'imgs/books/secrets-to-success.jpg' %}" alt="">
+                    <h4 class="book-title">Eric Thomas - The Secret to Success </h4>
+                    <a href="" class="buy-book">Buy Book</a>
+                </div>
+            </div>
+
+        </div>
+        
+    </section>
+{% endblock %}
+
+   

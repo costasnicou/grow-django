@@ -1,0 +1,272 @@
+
+
+/* slider */
+
+
+
+/* body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+} */
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+    margin-top: 186px;
+}
+
+.slides {
+  display: flex;
+  width: 300%; /* 100% for each of 3 slides */
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  /* background-position: center center; */
+    background-repeat: no-repeat;
+/* background-size: 100% 100%; OR try 'contain' if distortion is OK */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide.active {
+  opacity: 1;
+  /* position: relative; */
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+button.prev { left: 20px; }
+button.next { right: 20px; }
+
+
+.slide1{
+    background:linear-gradient(0deg, rgba(40, 40, 40, 0.3), rgba(62, 62, 62, 0.3)), url('../../imgs/slider1.jpg');
+ background-size: cover;
+  background-position: center;
+}
+
+.slide2{
+ background:linear-gradient(0deg, rgba(40, 40, 40, 0.3), rgba(62, 62, 62, 0.3)), url('../../imgs/slider2.jpg');
+ background-size: cover;
+  background-position: center;
+}
+
+.slide3{
+ background:linear-gradient(0deg, rgba(40, 40, 40, 0.3), rgba(62, 62, 62, 0.3)), url('../../imgs/slider3.jpg');
+ background-size: cover;
+  background-position: center;
+}
+
+hgroup{
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+
+.heading{
+    font-size: 50px;
+}
+
+.sub-heading{
+    font-size: 35px;
+}
+/* end slider */
+
+/* about us */
+section{
+    padding: 60px;
+}
+.about-us article{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.about-us article p{
+    font-weight: 300;
+    font-size: 19px;
+}
+/* end about us */
+
+
+
+/* success stories */
+.success-stories{
+    /* background-color: rgb(36, 141, 186);
+    /* The image used */
+  background-image: url("../../imgs/success-stories/parallax.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+    text-align: center;
+}
+.success-stories-title{
+    text-align: center;
+    color: white;
+    margin-top: 0;
+    border-bottom: 1px solid white;
+
+}
+.success-stories-wraper{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+.success-story{
+    background-color: rgba(40, 156, 205, 0.677);
+    /* background-color: rgba(72, 72, 72, 0.677); */
+    width: 300px;
+    /* height: 400px; */
+    margin: 30px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s ease-in;
+
+}
+
+.success-story:hover{
+  background-color: rgb(30, 123, 163);
+}
+.success-story h4{
+    color: white;
+    font-size: 20px;
+}
+.success-story img{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    border:1px solid rgb(255, 255, 255);
+    
+}
+
+.view-story{
+    background-color: rgb(47, 181, 238);
+    padding: 20px 40px;
+    color: white;
+    margin: 30px 0;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.8s ease-in;
+}
+
+.view-story:hover{
+     background-color: white;
+     color: rgb(32, 174, 235);
+}
+
+
+/* end success stories */
+
+
+
+
+
+
+
+/* featured-videos */
+.featured-videos{
+    background-color: rgb(242, 242, 242);
+    text-align: center;
+}
+.featured-videos-wraper{
+    width: 90%;
+    margin: 0 auto;
+   
+    /* flex-wrap: wrap; */
+    /* background-color: aqua; */
+
+}
+.featured-videos-wraper .videos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.featured-videos-wraper .videos iframe{
+    margin: 30px;
+}
+/* end featured vides */
+
+
+/* srart books */
+.books-section{
+  
+}
+.books-wraper{
+  width: 70%;
+  margin: 0 auto;
+}
+.books{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.book{
+  margin: 10px 30px;
+}
+.book h4{
+  font-weight: 300;
+  font-size: larger;
+}
+.book img{
+  width: 200px;
+  height: 250px;
+}
+
+.buy-book{
+  background-color: rgb(108, 177, 212);
+  color: white;
+  text-decoration: none;
+  padding: 10px 40px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.buy-book:hover{
+   background-color: rgb(94, 154, 183);
+}
+
+/* end books */books-section

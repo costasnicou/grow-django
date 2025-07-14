@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/desktop/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/desktop/homepage.css' %}">
+    {% if is_coach_story %}
+        <link rel="stylesheet" href="{% static 'css/desktop/story.css' %}">
+    {% elif is_video_category %}
+        <link rel="stylesheet" href="{% static 'css/desktop/category.css' %}">
+    {% endif %}
+
+</head>
+<body>
+    <header>
+        <div class="sticky-header">
+            <div class="top-header">
+                <div class="top-header-wraper">
+                    <img class="logo" src="{% static 'imgs/logo.png' %}" alt="">
+
+                    <p class="slogan">Life will never be the same again</p>
+
+                    <div class="contact">
+                        <p><strong>Email:</strong> secretknowhow@gmail.com</p>
+                        <p><strong>Tel:</strong> +357 96916096</p>
+                    
+                        
+                    </div>
+
+                </div>
+           
+            </div>
+
+            <nav class="main-nav">
+                <ul class="menu">
+                    <li><a class="menu-item" href="{% url 'homepage' %}">Home</a></li>
+
+                    {% for video_category in video_categories %}
+                        <li><a class="menu-item" href="{% url 'video_category_detail' slug=video_category.slug %}">{{video_category}}</a></li>
+                    {% endfor %}
+
+                </ul>
+            </nav>
+        </div>
+       
+
+        {% block hero %}
+    
+        {% endblock %}
+
+    </header>
+
+    <main>
+        {% block main %}
+
+        {% endblock %}
+    </main>
+    
+    <footer>
+
+    </footer>
+    
+    <script src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

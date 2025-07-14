@@ -1,0 +1,93 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+h3{
+    font-size: 30px;
+    color: rgb(40, 157, 207);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(36, 142, 187);
+    display: inline-block;
+    text-align: center;
+}
+/* TOP HEADER */
+.logo{
+    width: 350px;
+    height: 100px;
+}
+
+.slogan{
+      font-family: "Manufacturing Consent", system-ui;
+      font-size: 30px;
+      color: rgb(82, 82, 82);
+}
+.top-header{
+    padding: 5px;
+    background-color: white;
+    border-top: 15px solid rgb(10, 125, 163);
+}
+.top-header-wraper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    
+}
+
+.contact > *{
+    margin: 5px;
+}
+
+.sticky-header{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+/*END TOP HEADER */
+
+/* START NAV  */
+
+.main-nav{
+    background-color: rgb(43, 171, 226);
+    padding: 10px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+}
+
+.menu-item{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(243, 243, 243);
+    margin: 20px;
+
+}
+
+.menu-item:hover{
+    color: white;
+}
+
+/* END NAV  */
+
+
+/* footer */
+
+    footer{
+        height: 300px;
+        background-color: rgb(10, 125, 163);
+    }
+
+/* end footer */

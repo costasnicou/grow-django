@@ -1,0 +1,51 @@
+.coach-cover{
+    height: 600px;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    margin-top: 200px;
+}
+
+.anthony-robbins-cover{
+    background-image: url(../../imgs/success-stories/covers/anthony-robbins.avif);
+}
+
+.dani-johnson-cover{
+    background-image: url(../../imgs/success-stories/covers/dani-johnson.jpg);
+}
+
+
+.eric-thomas-cover{
+    background-image: url(../../imgs/success-stories/covers/eric-thomas.webp);
+    background-position: top;
+}
+
+
+.les-brown-cover{
+    background-image: url(../../imgs/success-stories/covers/Les-brown.jpg);
+    background-position: top;
+}
+
+
+.coach-story-section{
+    text-align: center;
+}
+.coach-story{
+    /* padding: 40px 0; */
+    width: 55%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.5rem;
+    font-weight: 300;
+    text-align: left;
+}
+
+.back-to-home{
+    background-color: rgb(217, 99, 56);
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 20px 0 0 0 ;
+
+}

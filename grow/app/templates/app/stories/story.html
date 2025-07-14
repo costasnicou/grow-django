@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block hero %}
+
+    {% if story.coach_name == 'Anthony Robbins' %}
+        <div class="coach-cover anthony-robbins-cover">
+
+        </div>
+    {% elif story.coach_name == 'Dani Johnson' %}
+        <div class="coach-cover dani-johnson-cover">
+
+        </div>
+
+    {% elif story.coach_name == 'Eric Thomas' %}
+
+        <div class="coach-cover eric-thomas-cover">
+
+        </div>
+    {% elif story.coach_name == 'Les Brown' %}
+
+        <div class="coach-cover les-brown-cover">
+
+        </div>
+    {% endif %}
+       
+{% endblock %}
+
+
+
+{% block main %}
+<section class="coach-story-section">
+    <article class="coach-story">
+        {{ story.story|safe }}
+       
+    </article>    
+     <a class="back-to-home" href="{% url 'homepage' %}">Back to Homepage</a>
+</section>
+
+
+{% endblock %}
+

@@ -1,0 +1,116 @@
+.category-cover{
+    height: 400px;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    margin-top: 200px;
+    /* background-color: aqua; */
+}
+
+.inspirational-cover{
+    background-image: url(../../imgs/categories/category-inspirational-cover.jpg);
+
+}
+
+.motivational-cover{
+    background-image: url(../../imgs/categories/category-motivational-cover.jpg);
+    
+}
+
+.time-management-cover{
+    background-image: url(../../imgs/categories/category-time-management-cover.jpg);
+    
+}
+
+.goal-setting-cover{
+    background-image: url(../../imgs/categories/category-goal-setting-cover.jpg);
+    
+}
+
+.spiritual-cover{
+    background-image: url(../../imgs/categories/category-spiritual-cover.jpg);
+}
+
+.container-grid{
+    min-height: 900px;
+    display: flex;
+    justify-content: flex-start;
+    /* margin-top: 200px; */
+
+}
+
+
+.left-sidebar{
+    width: 20%;
+    padding: 0;
+    background-color: rgb(248, 248, 248);
+    /* background-color: rgb(34, 34, 34); */
+}
+
+.right-content{
+    width: 80%;
+}
+.right-content h1{
+    text-align: left;
+    font-size: 40px;
+}
+.authors{
+    padding: 40px;
+    margin-left: 30px;
+    list-style:circle;
+}
+.authors li{
+ margin: 15px 0;
+}
+.authors li a{
+    text-decoration: none;
+    color: rgb(0, 123, 255);
+   
+    font-size: 20px;
+    font-weight: 300;
+}
+.video-content{
+    /* width: 80%; */
+    padding: 50px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: rgb(230, 230, 230);
+    background-color: rgb(248, 248, 248);
+}
+
+.video-content iframe{
+    margin: 10px 20px;
+}
+
+
+.pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.pagination a:hover {
+  background-color: #83c4e9;
+   background-color: #34acfb;
+    color: white;
+}
+
+.pagination .current {
+  background-color: #0099ff;
+  color: white;
+  font-weight: bold;
+  border-color: #007BFF;
+}
