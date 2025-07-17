@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app',
+    'blog',
     'django_ckeditor_5',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -113,14 +114,35 @@ USE_I18N = True
 USE_TZ = True
 
 CKEDITOR_5_CONFIGS = {
-    'default': {
-        'toolbar': [
-            'heading', '|', 'bold', 'italic', 'link',
-            'bulletedList', 'numberedList', 'blockQuote',
-            'imageUpload', '|', 'undo', 'redo',
+    "default": {
+        "toolbar": ["heading", "|", "bold", "italic", "link", "bulletedList", "numberedList", "blockQuote", "imageUpload"],
+        "height": "300px",
+        "width": "100%",
+        "image": {
+            "toolbar": ["imageTextAlternative", "imageStyle:full", "imageStyle:side"]
+        },
+    },
+    "extends": {
+        "blockToolbar": ["paragraph", "heading1", "heading2", "heading3", "codeBlock"],
+        "toolbar": [
+             "heading", 
+            "bold", "italic", "link", "underline", "code", "bulletedList",
+            "numberedList", "insertTable", "blockQuote",  "imageUpload","undo", "redo"
         ],
-        'height': '400px',
-    }
+        "image": {
+            "toolbar": [
+                "imageTextAlternative",
+                "toggleImageCaption",
+                "imageStyle:inline",
+                "imageStyle:wrapText",
+                "imageStyle:breakText"
+            ],
+            "styles": [
+                "inline", "wrapText", "breakText"
+            ]
+        },
+        "language": "en",
+    },
 }
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/

@@ -1,0 +1,43 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block csslink %}
+  <link rel="stylesheet" href="{% static 'css/desktop/blog/post-detail.css' %}">
+{% endblock %}
+{% block hero %}
+<div class="article-cover" style="  
+    background:linear-gradient(0deg, rgba(40, 40, 40, 0.3), rgba(62, 62, 62, 0.3)), url({{post.image.url}});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+   
+ ">
+    <h1>{{ post.title }}</h1>
+</div>
+
+{% endblock %}
+
+{% block main %}
+<section class="post-area">
+    <article class="post-single">
+        
+        <div>{{ post.content|safe }}</div>
+        <p>By {{ post.author }} on {{ post.created_at|date:"F j, Y" }}</p>
+         <h4>Share this post:</h4>
+          <ul class="share-btns">
+            <li>
+              <a class="fb-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a class="tweet-share" target="_blank" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}"><i class="fa-brands fa-square-x-twitter"></i></a>
+            </li>
+            <li>
+              <a class="linkedin-share" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title }}"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+          
+          </ul>
+
+    </article>
+   
+</section>
+
+{% endblock %}

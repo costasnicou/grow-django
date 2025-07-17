@@ -76,7 +76,7 @@ button.next { right: 20px; }
 .slide2{
  background:linear-gradient(0deg, rgba(40, 40, 40, 0.3), rgba(62, 62, 62, 0.3)), url('../../imgs/slider2.jpg');
  background-size: cover;
-  background-position: center;
+  background-position: bottom;
 }
 
 .slide3{

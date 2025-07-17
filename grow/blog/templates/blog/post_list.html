@@ -1,0 +1,38 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block csslink %}
+  <link rel="stylesheet" href="{% static 'css/desktop/blog/list-posts.css' %}">
+{% endblock %}
+{% block hero %}
+<div class="blog-cover">
+  <h1>Blog Articles</h1>
+</div>
+
+{% endblock %}
+
+{% block main %}
+<section class="blog-list">
+  <!-- <h2 class="section-blog-title">Blog Articles</h2> -->
+  <div class="articles-wraper">
+    {% for post in posts %}
+
+    <div class="post-wraper">
+      {% if post.image %}
+        <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
+      {% endif %}
+    
+
+      <article class="post-content">
+          <h3>{{ post.title }}</h3>
+          <p>By {{ post.author }} on {{ post.created_at|date:"F j, Y" }}</p>
+          <p class="post-body">{{ post.content|safe|striptags|truncatewords:30 }}</p>
+          <a class="post-read-more" href="{% url 'post_detail' slug=post.slug %}">Read More</a>
+      </article>
+    </div>
+    
+    
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

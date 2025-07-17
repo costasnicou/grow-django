@@ -12,10 +12,14 @@ h3{
     text-align: center;
 }
 /* TOP HEADER */
-.logo{
-    width: 350px;
-    height: 100px;
+.logo {
+    width: 250px;
+    height: 75px;
+    position: relative;
+    left: 100px;
 }
+
+
 
 .slogan{
       font-family: "Manufacturing Consent", system-ui;
@@ -72,13 +76,73 @@ h3{
     font-size: 20px;
     text-decoration: none;
     color: rgb(243, 243, 243);
-    margin: 20px;
+    margin: 0 20px;
+}
+.menu-item-dropdown{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(243, 243, 243);
+    margin: 20px 0 20px 0;
 
 }
 
 .menu-item:hover{
     color: white;
 }
+
+/* dropdown menu */
+
+/* Dropdown Content (Hidden by Default) */
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04aa6d00;
+    color: rgb(243, 243, 243);
+  font-size: 20px;
+  border: none;
+  margin: 0 20px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  
+  /* display: inline-block; */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  /* width: 100%; */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: rgb(43, 171, 226);
+    color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e4100;
+color: white;}
+
+/* end dropdown menu */
+
 
 /* END NAV  */
 
