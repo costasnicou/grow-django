@@ -9,6 +9,7 @@ class Post(models.Model):
     author = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.slug:

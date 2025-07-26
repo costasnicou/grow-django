@@ -102,9 +102,7 @@ hgroup{
 /* end slider */
 
 /* about us */
-section{
-    padding: 60px;
-}
+
 .about-us article{
     text-align: center;
     width: 50%;
@@ -227,13 +225,108 @@ section{
 .featured-videos-wraper .videos iframe{
     margin: 30px;
 }
+
+.view-more-videos{
+  display: inline-block;
+  text-decoration: none;
+   background-color: rgb(108, 177, 212);
+   padding: 10px 20px;
+   width: 300px;
+   color: white;
+   margin-top: 20px;
+}
+
+.view-more-videos:hover{
+   background-color: rgb(94, 154, 183);
+}
 /* end featured vides */
 
 
-/* srart books */
-.books-section{
+
+/* blog posts */
+
+.posts-section{
+ background-color: rgb(252, 252, 252);
+ text-align: center;
+
+ background-size: cover;
+ background-position: center;
+ /* color: white; */
+}
+.posts-wraper{
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  margin: 0 auto;
+  text-align: left;
+}
+.post-wraper{
+  min-width: 250px;
+  max-width: 250px;
+  margin: 20px 40px;
+  /* border: 2px solid white; */
+  /* padding: 20px;
+  background-color: rgba(0, 0, 0, 0.318);
+  border-radius: 20px;
+  border: 5px solid white;  */
+
+}
+
+.post-title{
+  color: rgb(40, 157, 207);
+  font-size: 20px;
+}
+
+
+.post-wraper img{
+  width: 244px;
+  min-height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+}
+.post-body{
+    height: 50px;
+    /* font-weight: bold; */
+    /* font-weight: 300; */
+}
+.post-read-more{
+  text-decoration: none;
+  background-color: rgb(108, 177, 212);
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 20px;
   
 }
+.post-read-more:hover{
+   background-color: rgb(94, 154, 183);
+}
+.view-more-posts{
+  display: inline-block;
+  text-decoration: none;
+   color: rgb(0, 146, 224);
+  margin-top: 30px;
+  /* color: whitesmoke; */
+  /* background-color: white;
+  color: rgb(94, 154, 183);
+  width: 300px; */
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+
+
+.view-more-posts:hover{
+    color: rgb(0, 121, 186);
+    /* color: white; */
+}
+/* end blog posts */
+
+
+
+/* srart books */
+
 .books-wraper{
   width: 70%;
   margin: 0 auto;
@@ -246,6 +339,8 @@ section{
 
 .book{
   margin: 10px 30px;
+  width: 300px;
+
 }
 .book h4{
   font-weight: 300;

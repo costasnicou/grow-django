@@ -1,6 +1,10 @@
 {% extends 'app/base.html' %}
 {% load static %}
+{% block title %}Homepage - MindlySpark{% endblock %}
 
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'css/desktop/homepage.css' %}">
+{% endblock %}
 
 {% block hero %}
     <div class="slider">
@@ -34,6 +38,7 @@
 
 
 
+
 {% block main %}
     <section class="about-us">
         <article>
@@ -56,49 +61,62 @@
 
         </div>
     </section>
+    
+    <section class="posts-section">
+        <h3 class="blog-section-title">Blog Articles</h3>
+        <div class="posts-wraper">
+            {% for post in posts %}
+
+            <div class="post-wraper">
+                {% if post.image %}
+                    <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
+                {% endif %}
+                
+
+                <article class="post-content">
+                    <h4 class="post-title">{{ post.title }}</h4>
+                   
+                    <p class="post-body">{{ post.content|safe|striptags|truncatewords:10 }}</p>
+                    <!-- <p class="post-author">By {{ post.author }} on {{ post.created_at|date:"F j, Y" }}</p> -->
+                   
+                </article>
+                 <a class="post-read-more" href="{% url 'post_detail' slug=post.slug %}">Read More</a>
+            </div>
+            
+            
+            {% endfor %}
+        </div>
+        <a href="{% url 'post_list' %}" class="view-more-posts">View More</a>
+    </section>
 
     <section class="featured-videos">
         
         <div class="featured-videos-wraper">
             <h3 style="text-align: center;">Featured Videos</h3>
             <div class="videos">
-                <iframe width="600" height="350" src="https://www.youtube.com/embed/HUHMZf3qwsQ?si=4TkWZPszLdaKt3fm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="600" height="350" src="https://www.youtube.com/embed/93RI4l-O0BY?si=cwG5zuZljmDurCcd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="600" height="350" src="https://www.youtube.com/embed/D53m7CJ7wYI?si=RALbXF0720IbqLUP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="600" height="350" src="https://www.youtube.com/embed/h1rA2jMS-6I?si=UBFGS9En0A-vfvzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {% for featured_video in featured_videos %}
+                <iframe width="600" height="350" src="{{ featured_video.get_youtube_embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {% endfor %}
             </div>
+            <a href="{% url 'video_category_detail' slug='Inspirational' %}" class="view-more-videos">View More</a>
         </div>
 
     </section>
 
+
     <section class="books-section">
         <div class="books-wraper">
-            <h3>Life Changing Books</h3>
+            <h3>Recommended Books</h3>
             <div class="books">
+                {% for featured_book in featured_books %}
                 <div class="book">
-                    <img src="{% static 'imgs/books/awaken-the-giant-within.jpg' %}" alt="">
-                    <h4 class="book-title">Anthony Robbins - Awaken the Giant Within</h4>
-                    <a href="" class="buy-book">Buy Book</a>
+                    <img src="{{featured_book.cover_image.url}}" alt="">
+                    <h4 class="book-title">{{featured_book.author}} - {{ featured_book.title }}</h4>
+                    <a href="{{featured_book.amazon_link}}" class="buy-book">Buy Book</a>
                 </div>
+                {% endfor %}
+             
 
-                <div class="book">
-                    <img src="{% static 'imgs/books/first-steps-to-wealth.jpg' %}" alt="">
-                    <h4 class="book-title">Dani Johnson - First Steps to Wealth</h4>
-                    <a href="" class="buy-book">Buy Book</a>
-                </div>
-
-                <div class="book">
-                    <img src="{% static 'imgs/books/life-with-no-limits.jpg' %}" alt="">
-                   
-                    <h4 class="book-title">Nick Vujicic - Life Without Limits</h4>
-                    <a href="" class="buy-book">Buy Book</a>
-                </div>
-
-                <div class="book">
-                    <img src="{% static 'imgs/books/secrets-to-success.jpg' %}" alt="">
-                    <h4 class="book-title">Eric Thomas - The Secret to Success </h4>
-                    <a href="" class="buy-book">Buy Book</a>
-                </div>
             </div>
 
         </div>

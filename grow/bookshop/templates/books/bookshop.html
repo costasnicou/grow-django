@@ -1,0 +1,68 @@
+{% extends 'app/base.html' %}
+{% load static %} 
+{% block title%} Bookshop - MindlySpark {% endblock  %}
+{% block csslink %}
+    <link rel="stylesheet" href="{% static 'css/desktop/bookshop_list.css' %}">
+{% endblock %}
+{% block hero %}
+    <div class="cover-bookshop">
+        <nav >
+            <ul class="books-category-menu">
+                <h2>Book Categories</h2>
+                <li><a href="">Personal Development</a></li>
+                <li><a href="">Time Management</a></li>   
+                <li><a href="">Business</a></li>   
+                <li><a href="">Finances</a></li>
+                <li><a href="">Parenting</a></li>
+            </ul>
+        </nav>
+
+        <h1>Find the perfect book</h1>
+
+    </div>
+{% endblock %}
+{% block main %}
+    <div class="main-wraper">
+        <section class="featured-categories">
+            <div class="featured-categories-wraper">
+                <div class="featured-category-wraper">
+                    <h4>Personal Development Books</h4>
+                    <div class="featured-category">
+                        <img src="{% static 'images/featured-categories/personal-growth.jpg' %}" alt="">
+                        <p><span class="enthousiasm">Grow</span> and <span class="enthousiasm">Elevate</span> your skills to the <span class="enthousiasm">fullest</span>
+                         <a href="" class="learn-more-book-category">Learn More</a>
+                        </p>
+                    
+                    </div>
+                </div>
+               
+
+                <div class="featured-category-wraper">
+                    <h4>Business Books</h4>
+                    <div class="featured-category">
+                        <img src="{% static 'images/featured-categories/business.jpg' %}" alt="">
+                        <p><span class="enthousiasm">Drive</span> your <span class="enthousiasm">business</span> to unlimited <span class="enthousiasm">success</span>
+                         <a href="" class="learn-more-book-category">Learn More</a>
+                        </p>
+                    
+                    </div>
+                </div>
+
+                <div class="featured-category-wraper">
+                    <h4>Finance Books</h4>
+                    <div class="featured-category">
+                        <img src="{% static 'images/featured-categories/finances.jpg' %}" alt="">
+                        <p><span class="enthousiasm">Set</span> and <span class="enthousiasm">meet</span> your financial <span class="enthousiasm">goals</span>
+                        <a href="" class="learn-more-book-category">Learn More</a>
+                        </p>
+                    
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+        
+
+    </div>
+{% endblock %}

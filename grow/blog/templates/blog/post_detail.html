@@ -1,5 +1,22 @@
 {% extends "app/base.html" %}
 {% load static %}
+{% block meta %}
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ post.title }}" />
+  <meta property="og:description" content="{{ post.content|safe|striptags|truncatewords:25 }}" />
+  <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+  {% if post.image %}
+    <meta property="og:image" content="{{ absolute_image_url }}" />
+  {% endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ post.title }}" />
+  <meta name="twitter:description" content="{{ post.content|striptags|truncatewords:25 }}" />
+  {% if post.image %}
+    <meta name="twitter:image" content="{{ absolute_image_url }}" />
+  {% endif %}
+{% endblock %}
 {% block csslink %}
   <link rel="stylesheet" href="{% static 'css/desktop/blog/post-detail.css' %}">
 {% endblock %}
@@ -19,11 +36,12 @@
 {% block main %}
 <section class="post-area">
     <article class="post-single">
-        
+        <h2>{{post.title}}</h2>
         <div>{{ post.content|safe }}</div>
-        <p>By {{ post.author }} on {{ post.created_at|date:"F j, Y" }}</p>
-         <h4>Share this post:</h4>
+        <p class="author">By {{ post.author }} on {{ post.created_at|date:"F j, Y" }}</p>
+         
           <ul class="share-btns">
+            <h4>Share this post:</h4>
             <li>
               <a class="fb-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"><i class="fa-brands fa-square-facebook"></i></a>
             </li>
@@ -37,6 +55,8 @@
           </ul>
 
     </article>
+
+    <a href="{% url 'post_list' %}" class="back-to-blog">Back to Articles</a>
    
 </section>
 

@@ -3,15 +3,22 @@ from .models import CoachStory
 from .models import Video, VideoCategory, Author
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from urllib.parse import urlencode
+from blog.models import Post
+from bookshop.models import Book
 
 # Create your views here.
 def homepage(request):
-
+    featured_videos = Video.objects.filter(featured=True)
+    posts = Post.objects.filter(published=True,featured=True).order_by('-created_at')
+    featured_books = Book.objects.filter(featured=True).order_by('-created_at')
     stories = CoachStory.objects.all()
     video_categories = VideoCategory.objects.all()
     return render(request, 'app/homepage.html',{
         'video_categories':video_categories,
+        'featured_books':featured_books,
         'stories':stories,
+        'posts':posts,
+        'featured_videos':featured_videos,
     })
 
 def coach_story_detail(request, slug):

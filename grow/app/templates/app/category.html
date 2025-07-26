@@ -43,10 +43,26 @@
         </div>
 
         <section class="right-content">
+            <nav>
+
+                <ul class="categories-menu-list">
+                    {% for category in video_categories %}
+                        <li><a href="{% url 'video_category_detail' slug=category.slug %}">{{category}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
             <h1>{{category.name}} Videos</h1>
             <div class="video-content">
-                {% for video in videos %}
-                    <iframe width="300" height="215" src="{{ video.get_youtube_embed_url }}" frameborder="0" allowfullscreen></iframe>
+                 {% for video in videos %}
+                    <div class="video">
+                       
+                        <iframe width="300" height="215" src="{{ video.get_youtube_embed_url }}" frameborder="0" allowfullscreen></iframe>
+                         <h4>{{video.title}}</h4>
+                     </div>
+                
+
+                   
+                    
                 {% endfor %}
             
             </div>

@@ -32,6 +32,28 @@
     
     
     {% endfor %}
+    <div class="pagination">
+        {% if posts.has_previous %}
+            <a href="?page=1{% if querystring %}&{{ querystring }}{% endif %}">« First</a>
+            <a href="?page={{ posts.previous_page_number }}{% if querystring %}&{{ querystring }}{% endif %}">‹ Prev</a>
+        {% endif %}
+
+        {% for num in posts.paginator.page_range %}
+            {% if num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+            {% if posts.number == num %}
+                <span class="current">{{ num }}</span>
+            {% else %}
+                <a href="?page={{ num }}{% if querystring %}&{{ querystring }}{% endif %}">{{ num }}</a>
+            {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}{% if querystring %}&{{ querystring }}{% endif %}">Next ›</a>
+            <a href="?page={{ posts.paginator.num_pages }}{% if querystring %}&{{ querystring }}{% endif %}">Last »</a>
+        {% endif %}
+    </div>
+
   </div>
 </section>
 

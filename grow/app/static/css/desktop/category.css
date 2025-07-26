@@ -43,7 +43,7 @@
 .left-sidebar{
     width: 20%;
     padding: 0;
-    background-color: rgb(248, 248, 248);
+   
     /* background-color: rgb(34, 34, 34); */
 }
 
@@ -55,12 +55,20 @@
     font-size: 40px;
 }
 .authors{
-    padding: 40px;
+    padding: 60px;
     margin-left: 30px;
     list-style:circle;
+    background-color: rgb(193, 193, 193);
+     background-color: rgb(248, 248, 248);
+    margin-top: 80px;
+ 
+}
+
+.authors h3{
+    margin: 0;
 }
 .authors li{
- margin: 15px 0;
+ margin: 15px;
 }
 .authors li a{
     text-decoration: none;
@@ -68,6 +76,30 @@
    
     font-size: 20px;
     font-weight: 300;
+}
+.authors li a:hover{
+    font-weight: bold;
+}
+
+.categories-menu-list{
+    list-style: none;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    background-color: rgb(248, 248, 248);
+    padding: 20px;
+
+}
+
+.categories-menu-list li a{
+    text-decoration: none;
+   color: rgb(49, 49, 49);
+    margin:0 20px ;
+    font-size: 20px;
+}
+.categories-menu-list li a:hover{
+    font-weight: bold;
 }
 .video-content{
     /* width: 80%; */
@@ -79,38 +111,16 @@
     background-color: rgb(248, 248, 248);
 }
 
-.video-content iframe{
+.video{
+    width: 300px;
+}
+
+.video h4{
+    font-weight: 300;
+}
+
+.video-content .video{
     margin: 10px 20px;
 }
 
 
-.pagination {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.pagination a,
-.pagination span {
-  display: inline-block;
-  margin: 0 4px;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  color: #333;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
-}
-
-.pagination a:hover {
-  background-color: #83c4e9;
-   background-color: #34acfb;
-    color: white;
-}
-
-.pagination .current {
-  background-color: #0099ff;
-  color: white;
-  font-weight: bold;
-  border-color: #007BFF;
-}

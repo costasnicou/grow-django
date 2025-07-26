@@ -19,9 +19,14 @@
     font-size: 60px;
 }
 
+.post-area{
+    text-align: center;
+}
 .post-single{
     width: 60%;
     margin: 0 auto;
+    text-align: left;
+    
 }
 
 .post-single p {
@@ -30,17 +35,22 @@
     font-weight: 300;
 }
 
+.author{
+    text-align: center;
+}
+
 
 .share-btns{
     display: flex;
     list-style: none;
     justify-content: flex-start;
     padding: 0;
+    align-items: center;
 }
 
 .share-btns li a{
     text-decoration: none;
-    margin: 2.5px
+    margin: 5px
 }
 
 .share-btns li a i{
@@ -75,4 +85,17 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.back-to-blog{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+
+    color: rgb(1, 94, 128);
+}
+
+.back-to-blog:hover{
+     color: rgb(1, 94, 128);
+    color: rgb(3, 121, 164);        
 }

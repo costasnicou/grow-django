@@ -42,7 +42,7 @@ class Video(models.Model):
     category = models.ForeignKey(VideoCategory, on_delete=models.CASCADE, related_name='videos')
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='videos')
     added_on = models.DateTimeField(auto_now_add=True)
-
+    featured = models.BooleanField(default=False)
     def __str__(self):
         return self.title
 

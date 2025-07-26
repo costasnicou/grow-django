@@ -46,7 +46,7 @@
 }
 
 .post-wraper:hover{
-    background-color: rgb(238, 244, 249);
+    /* background-color: rgb(238, 244, 249); */
     color: black;
     box-shadow: 10px 11px 44px 0px rgba(211,231,245,1);
     -webkit-box-shadow: 10px 11px 44px 0px rgba(211,231,245,1);
@@ -81,7 +81,16 @@
 
 .post-body{
     font-size: 19px;
-    font-weight: 300;
+    
+
+}
+
+.post-body{
+font-weight: 300;
+}
+
+.post-author{
+    font-weight: 300 !important;
 }
 
 .post-read-more{
