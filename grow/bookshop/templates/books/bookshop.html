@@ -9,11 +9,10 @@
         <nav >
             <ul class="books-category-menu">
                 <h2>Book Categories</h2>
-                <li><a href="">Personal Development</a></li>
-                <li><a href="">Time Management</a></li>   
-                <li><a href="">Business</a></li>   
-                <li><a href="">Finances</a></li>
-                <li><a href="">Parenting</a></li>
+                {% for book_category in book_categories %}
+                    <li><a href="">{{book_category.name}}</a></li>
+                {% endfor %}
+                
             </ul>
         </nav>
 
@@ -63,6 +62,120 @@
             
         </section>
         
+        <section class="featured-books">
+            <h2>Featured Books</h2>
+            <div class="featured-books-wraper">
+                <div class="star-book">
+                
+                        <div class="star-book-item">
+                            <img src="{{star_book.cover_image.url}}" alt="">
+                            <h4 class="book-title">{{star_book.author}} - {{ star_book.title }}</h4>
+                            <a target="_blank" href="{{star_book.amazon_link}}" class="buy-book">Buy Book</a>
+                        </div>
+                    
+                </div>
 
+                <div class="rest-books">
+                    {% for featured_book in featured_books %}
+                        <div class="book">
+                            <img src="{{featured_book.cover_image.url}}" alt="">
+                            <h4 class="book-title">{{featured_book.author}} - {{ featured_book.title }}</h4>
+                            <a target="_blank" href="{{featured_book.amazon_link}}" class="buy-book">Buy Book</a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+
+        <section class="tabbed-categories">
+            <h2 class="sub-heading">Books by Category</h2>
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="tab1">Personal Development</button>
+                    <button class="tab-btn" data-tab="tab2">Time Management & Productivity</button>
+                    <button class="tab-btn" data-tab="tab3">Business</button>
+                    <button class="tab-btn" data-tab="tab4">Finances</button>
+                    <button class="tab-btn" data-tab="tab5">Parenting</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="tab1" class="personal-development-tab tab-pane active">
+                        <div class="tab-wraper">
+                            {% for personaldev_book in personaldev_books %}
+                              
+                                <div class="book">
+                                    <img src="{{personaldev_book.cover_image.url}}" alt="">
+                                    <h4 class="book-title">{{personaldev_book.author}} - {{ personaldev_book.title }}</h4>
+                                    <a target="_blank" href="{{personaldev_book.amazon_link}}" class="buy-book">Buy Book</a>
+                                </div>
+                             
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="tab2" class="time-management-tab tab-pane">
+                         <div class="tab-wraper">
+                            {% for timeprod_book in timeprod_books %}
+                                {% if timeprod_book.featured == False %}
+                                <div class="book">
+                                    <img src="{{timeprod_book.cover_image.url}}" alt="">
+                                    <h4 class="book-title">{{timeprod_book.author}} - {{ timeprod_book.title }}</h4>
+                                    <a target="_blank" href="{{timeprod_book.amazon_link}}" class="buy-book">Buy Book</a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="tab3" class="business-tab tab-pane">
+                         <div class="tab-wraper">
+                            {% for personaldev_book in personaldev_books %}
+                                {% if personaldev_book.featured == False %}
+                                <div class="book">
+                                    <img src="{{personaldev_book.cover_image.url}}" alt="">
+                                    <h4 class="book-title">{{personaldev_book.author}} - {{ personaldev_book.title }}</h4>
+                                    <a target="_blank" href="{{personaldev_book.amazon_link}}" class="buy-book">Buy Book</a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="tab4" class="finances-tab tab-pane">
+                       <div class="tab-wraper">
+                            {% for personaldev_book in personaldev_books %}
+                                {% if personaldev_book.featured == False %}
+                                <div class="book">
+                                    <img src="{{personaldev_book.cover_image.url}}" alt="">
+                                    <h4 class="book-title">{{personaldev_book.author}} - {{ personaldev_book.title }}</h4>
+                                    <a target="_blank" href="{{personaldev_book.amazon_link}}" class="buy-book">Buy Book</a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                     <div id="tab5" class="parenting-tab tab-pane">
+                         <div class="tab-wraper">
+                            {% for personaldev_book in personaldev_books %}
+                                {% if personaldev_book.featured == False %}
+                                <div class="book">
+                                    <img src="{{personaldev_book.cover_image.url}}" alt="">
+                                    <h4 class="book-title">{{personaldev_book.author}} - {{ personaldev_book.title }}</h4>
+                                    <a target="_blank" href="{{personaldev_book.amazon_link}}" class="buy-book">Buy Book</a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/tabs.js' %}"></script>
+{% endblock %}
+    

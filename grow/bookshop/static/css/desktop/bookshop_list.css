@@ -67,14 +67,6 @@
     /* border-bottom: 1px solid rgb(5, 97, 151);; */
 }
 
-.main-wraper{
-    min-height: 800px;
-    width: 85%;
-    /* background-color: aliceblue; */
-    margin: 0 auto;
-    padding: 40px;
-
-}
 
 /* featured categories */
 
@@ -82,6 +74,8 @@
 .featured-categories-wraper{
     display: flex;
     justify-content: center;
+    padding: 40px 0 0 0;
+
    
 }
 .featured-category-wraper{
@@ -143,3 +137,152 @@
 }
 
 /* end featured categories */
+
+/* featured books */
+.featured-books{
+    padding: 10px 0 100px 0;
+    background-color: rgb(247, 249, 250);
+    
+}
+
+.featured-books h2{
+    /* position: relative; */
+   
+    color: rgb(95, 137, 160);
+    /* left: 200px;
+    bottom: 20px; */
+    margin-left: 200px;
+    padding-bottom: 20px;
+}
+
+.featured-books-wraper{
+    display: flex;
+    justify-content: center;
+
+}
+
+.star-book{
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 20px;
+    width: 350px;
+    
+    
+}
+
+.star-book-item{
+    text-align: center;
+    padding: 20px;
+}
+
+.star-book-item img{
+    width: 300px;
+    height: 350px;
+}
+
+.rest-books{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.book{
+    width: 200px;
+    margin: 10px 40px;
+    border: 1px solid rgb(210, 210, 210);
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+.book img{
+    width: 200px;
+    height: 250px;
+    
+}
+
+.book h4{
+    height: 59px;
+}
+
+.buy-book{
+  background-color: rgb(108, 177, 212);
+  color: white;
+  text-decoration: none;
+  padding: 10px 40px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.buy-book:hover{
+   background-color: rgb(94, 154, 183);
+}
+
+.view-more-books{
+  text-align: center;
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: rgb(0, 146, 224);
+}
+.view-more-books:hover{
+    color: rgb(0, 121, 186);
+    /* color: white; */
+}
+
+/* end featured books */
+
+
+/* tabbed categories books */
+.tabs {
+  max-width: 90%;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background: #f2f2f2;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.tab-btn:hover {
+  background: #e0e0e0;
+}
+
+.tab-btn.active {
+  background: white;
+  border-bottom: 2px solid #007BFF;
+  font-weight: bold;
+  color: rgb(66, 115, 141);
+}
+
+.tab-pane {
+  display: none;
+  padding: 15px;
+  background: white;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.tab-wraper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sub-heading{
+    color: rgb(95, 137, 160);
+    text-align: center;
+    margin-bottom: 60px;
+    
+}

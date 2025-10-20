@@ -11,7 +11,7 @@ class BookCategory(models.Model):
 
 class Author(models.Model):
     name       = models.CharField(max_length=100, unique=True)
-    slug       = models.SlugField(unique=True, blank=True)
+    
     # link authors to categories:
     categories = models.ManyToManyField(
         BookCategory,
@@ -20,11 +20,11 @@ class Author(models.Model):
         help_text="Select the categories this author writes in"
     )
 
-    def save(self, *args, **kwargs):
-        # auto-populate slug on first save
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     # auto-populate slug on first save
+    #     if not self.slug:
+    #         self.slug = slugify(self.name)
+    #     super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

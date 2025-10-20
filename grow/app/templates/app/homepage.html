@@ -106,22 +106,25 @@
 
     <section class="books-section">
         <div class="books-wraper">
-            <h3>Recommended Books</h3>
+            <h3 class="books-section-title">Recommended Books</h3>
             <div class="books">
                 {% for featured_book in featured_books %}
                 <div class="book">
                     <img src="{{featured_book.cover_image.url}}" alt="">
                     <h4 class="book-title">{{featured_book.author}} - {{ featured_book.title }}</h4>
-                    <a href="{{featured_book.amazon_link}}" class="buy-book">Buy Book</a>
+                    <a target="_blank" href="{{featured_book.amazon_link}}" class="buy-book">Buy Book</a>
                 </div>
                 {% endfor %}
-             
-
             </div>
 
+            
+
         </div>
-        
+        <a href="{% url 'books_list' %}" class="view-more-books">View More</a>
     </section>
 {% endblock %}
 
-   
+{% block scripts %}
+    <script src="{% static 'js/slider.js' %}"></script>
+{% endblock %}
+    

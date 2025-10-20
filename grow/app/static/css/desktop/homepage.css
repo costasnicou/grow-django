@@ -180,16 +180,15 @@ hgroup{
     
 }
 
-.view-story{
+.view-story {
     background-color: rgb(47, 181, 238);
-    padding: 20px 40px;
+    padding: 10px 40px;
     color: white;
     margin: 30px 0;
     text-decoration: none;
-    border-radius: 20px;
+    border-radius: 15px;
     transition: all 0.8s ease-in;
 }
-
 .view-story:hover{
      background-color: white;
      color: rgb(32, 174, 235);
@@ -326,10 +325,18 @@ hgroup{
 
 
 /* srart books */
-
+.books-section{
+  text-align: center;
+}
 .books-wraper{
   width: 70%;
   margin: 0 auto;
+  text-align: left;
+  /* text-align: center; */
+}
+
+h3.books-section-title{
+  text-align: left !important;
 }
 .books{
   display: flex;
@@ -342,9 +349,10 @@ hgroup{
   width: 300px;
 
 }
-.book h4{
-  font-weight: 300;
-  font-size: larger;
+.book h4 {
+    font-weight: 300;
+    font-size: larger;
+    height: 68px;
 }
 .book img{
   width: 200px;
@@ -356,7 +364,7 @@ hgroup{
   color: white;
   text-decoration: none;
   padding: 10px 40px;
-  margin-top: 5px;
+  margin-top: 0px;
   display: inline-block;
 }
 
@@ -364,4 +372,15 @@ hgroup{
    background-color: rgb(94, 154, 183);
 }
 
+.view-more-books{
+  text-align: center;
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: rgb(0, 146, 224);
+}
+.view-more-books:hover{
+    color: rgb(0, 121, 186);
+    /* color: white; */
+}
 /* end books */books-section
